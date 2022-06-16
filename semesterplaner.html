@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<title>Semesterplaner</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="stylesheet.css">
+	<script src="studiengaenge.js"></script>
+	<script src="semesterplaner.js"></script>
+	
+
+</head>
+<body onload="fill_dropdown()">
+
+	<header>
+		<h1>Semesterplaner</h1>
+	</header>
+    
+	<aside id="modulebar">
+			<p>Menu</p>
+			
+			<label for="Semester">Semester:</label>
+			<button type="button" class="add" onClick="addSemester()">+</button>
+			<button type="button" class="subtract" onClick="removeSemester()">-</button><br>
+			
+			
+			<label for="Studiengang">Wähle einen Studiengang:</label>
+			<select name="Studiengang" class="select" id="select" onchange="loadCourse()">
+				<option value="">Choose an Option</option>
+			</select>
+			
+			<div class="course" id="course">
+				
+			</div>
+        
+        <br>
+        <p>Modul hinzufügen</p>
+        
+        <input type="text" id="d_module_name" size="10">
+        <select class="select" id="d_type">
+            <option value="">Wähle</option>
+        </select>
+        <select class="select" id="d_lp">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+        <button type="button" onClick="add_module_dynamically()">+</button>
+    </aside>
+
+    
+	<main>
+		
+		<table id="main-table">
+			<thead>
+				<tr>
+					<th>LP:</th>
+					<th class="LP">5 LP</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>		
+		</table>
+		<div id="module_status">
+            <p>Status</p>
+            <table id="status_table"></table>
+		</div>
+		<div>
+			<p>Willkommen beim Semsterplaner.
+				Dieses Projekt ist OpenSource, jeder der also Interesse hat kann dabei helfen den Code up to date zu halten oder neue Studiengänge hinzuzufügen. Kontaktiert dazu einfach den FSR (oder den Verantwortlichen).
+		</div>
+	</main>
+
+
+
+</body>
+</html>
